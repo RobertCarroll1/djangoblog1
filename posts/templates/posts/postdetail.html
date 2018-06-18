@@ -15,12 +15,16 @@
             <h3>{{ post.title }}</h3>
             <div class="row">
                 <div class="col-xs-9">
-                    <p>{{ post.content }}</p>
+                    <p>{{ post.content | linebreaksbr }}</p>
                     <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
                     <p><span class="boldtext">Views:</span> {{post.views}}</p>
                     <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
                     <a href="{% url 'get_posts' %}" class="btn btn-default">Back to Blog</a>
+
+                    {% if post.author == request.user %}
                     <a href="{% url 'edit_post' post.id %}" class="btn btn-default">Edit Post</a>
+                    {% endif %}
+                    
                     <hr>
                 </div>
             </div>

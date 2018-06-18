@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import BlogPostForm
+from django.http import HttpResponseForbidden
 
 # Create your views here.
 def get_posts(request):
@@ -29,6 +30,8 @@ def new_post(request):
         
 def edit_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    if request.user !=post.author:
+        return HttpResponseForbidden()
     if request.method == "POST":
         form = BlogPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
@@ -45,6 +48,7 @@ def create_or_edit_post(request, pk=None):
     is null or not
     """
     post = get_object_or_404(Post, pk=pk) if pk else None
+    
     if request.method == "POST":
         form = BlogPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
