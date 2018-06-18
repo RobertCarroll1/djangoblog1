@@ -128,3 +128,6 @@ a, a:hover {
         font-size: 80px;
     }
 }
+.blogposts{
+    word-wrap: break-word;
+}

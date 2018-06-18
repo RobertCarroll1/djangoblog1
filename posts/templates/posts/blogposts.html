@@ -9,16 +9,21 @@
                 </a>
                 <p><span class="boldtext">Author:</span> {{ post.author }} </p>
             </div>
-            <div class="col-md-10 col-sm-9">
+                        <div class="col-md-10 col-sm-9">
                 <h3>{{ post.title }}</h3>
-                <div class="row">
-                    <div class="col-xs-9">
-                        <p>{{ post.content|linebreaksbr }}</p>
-                        <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-default">Read more</a></p>
-                        <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                        <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
-                        <p><span class="boldtext">Author:</span> {{ post.author }}</p>
+                            <div class="row">
+                                <div class="col-xs-9" id="blogposts" style="max-width: 164px; word-wrap: break-word; width: 163px;">
+                                            <p>{{ post.content | linebreaksbr }}</p>
+                                            <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-default">Read more</a></p>
+                                            <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
+                                            <p><span class="boldtext">Views:</span> {{post.views}}</p>
+                                            <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                                            <p><span class="boldtext">Author:</span> {{ post.author }}</p>
+                                        
+                                   
+                                </div>
+                            </div>
+                        </div>>
                     </div>
                 </div>
             </div>
