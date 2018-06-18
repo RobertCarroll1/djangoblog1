@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load bootstrap_tags%}
+{% block content %}
+
+<h1>Register</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form | as_bootstrap }}
+
+    <input type="submit" value="Login">
+
+</form>
+{% endblock content %}
