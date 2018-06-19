@@ -20,6 +20,7 @@
                     <p><span class="boldtext">Views:</span> {{post.views}}</p>
                     <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
                     <a href="{% url 'get_posts' %}" class="btn btn-default">Back to Blog</a>
+                    <p><span class="boldtext">Likes:</span> {{post.likes.all | length}}</p>
 
                     {% if post.author == request.user %}
                     <a href="{% url 'edit_post' post.id %}" class="btn btn-default">Edit Post</a>
