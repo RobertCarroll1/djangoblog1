@@ -12,7 +12,7 @@
                         <div class="col-md-10 col-sm-9">
                 <h3>{{ post.title }}</h3>
                             <div class="row">
-                                <div class="col-xs-9" id="blogposts" style="max-width: 164px; word-wrap: break-word; width: 163px;">
+                                <div class="col-xs-9" id="blogposts" style="max-width: 100%; word-wrap: break-word; width: 100%;">
                                             <p>{{ post.content | linebreaksbr }}</p>
                                             <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-default">Read more</a></p>
                                             <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
